@@ -2,10 +2,8 @@ name: CI to Docker Hub
 
 on:
   push:
-    branches:
-      - releases/**
-    paths-ignore:
-      - '**.md'
+    tags:
+      - 'v*.*.*'
 
 jobs:
   docker-hub-ci:
