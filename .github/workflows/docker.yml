@@ -41,7 +41,6 @@ jobs:
           context: .
           builder: ${{ steps.buildx.outputs.name }}
           file: ./Dockerfile
-          target: deploy
           push: false
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/next-cache:${{ steps.get_version.outputs.SOURCE_TAG }}
           cache-from: type=local,src=/tmp/.buildx-cache
