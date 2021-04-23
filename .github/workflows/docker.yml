@@ -2,8 +2,8 @@ name: CI to Docker Hub
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 jobs:
   docker-hub-ci:
@@ -43,6 +43,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./Dockerfile
           push: false
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/next-cache:${{ steps.get_version.outputs.SOURCE_TAG }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/next-cache:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
