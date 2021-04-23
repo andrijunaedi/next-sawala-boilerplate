@@ -1,8 +1,11 @@
 name: CI to Docker Hub
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - releases/**
+    paths-ignore:
+      - '**.md'
 
 jobs:
   docker-hub-ci:
