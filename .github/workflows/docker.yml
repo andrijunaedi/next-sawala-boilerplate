@@ -22,6 +22,5 @@ jobs:
           password: '${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}'
           image_name: ${{ secrets.DOCKER_HUB_USERNAME }}/next-cache
           image_tag: ${{ steps.get_version.outputs.SOURCE_TAG }},latest
-          push_git_tag: true
           context: .
           dockerfile: Dockerfile
