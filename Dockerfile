@@ -14,7 +14,7 @@ FROM sawala/node-runner:1.0
 ENV NODE_ENV=production
 EXPOSE 3000
 WORKDIR /app
-COPY --from=build /build/next.config.js /build/package.json /build/.git ./
+COPY --from=build /build/package.json /build/.git ./
 COPY --from=build /build/.next ./.next
 COPY --from=build /build/public ./public
 COPY --from=build /build/node_modules ./node_modules
